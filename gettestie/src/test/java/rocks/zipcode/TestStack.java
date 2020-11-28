@@ -1,5 +1,7 @@
 package rocks.zipcode;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 import java.util.Stack;
 
@@ -21,4 +23,27 @@ public class TestStack {
     }
 
     // Make a bigger test exercising more Stack methods.....
+
+    @Test
+    public void stackTestPop() {
+        Stack<String> stack = new Stack<>();
+        stack.push("Hello world");
+        stack.pop();
+        assertEquals(true, stack.isEmpty());
+    }
+
+    @Test
+    public void stackTestPeek() {
+        Stack<String> stack = new Stack<>();
+        stack.push("Hello world");
+        assertEquals("Hello world", stack.peek());
+    }
+    @Test
+    public void stackTestisEmpty(){
+        Stack<String> stack = new Stack<>();
+        stack.push("Hello world");
+        Boolean expected = false;
+        Boolean actual = stack.isEmpty();
+        assertEquals(expected, actual);
+    }
 }
